@@ -1,4 +1,10 @@
 number,name,url,lint_score,test_coverage,document_score,activeness
-0,waifuim,https://github.com/avizum/waifuim.git,0.00,0%,0,10.333333333333334,
-1,waifu2x-ncnn-py,https://github.com/Tohrusky/waifu2x-ncnn-py.git,0.00,0%,0,0.144,
-2,animu,https://github.com/eitozx/Animu.git,4.84,0%,1,0.061946902654867256,
+0,pycord,https://github.com/alesanfra/pycord.git,6.63,33%,2,0.07193077339102218,
+1,holiday-event-api,https://github.com/westy92/holiday-event-api-python.git,6.57,100%,4,0.014285714285714285,
+2,Django,https://github.com/django/django,5.77,78%,3,0.012674271229404309,
+3,Flask,https://github.com/pallets/flask/,5.17,0%,0,0.20810810810810812,
+4,pypokedex,https://github.com/arnavb/pypokedex.git,0.00,6%,0,7.0,
+6,pokemon,https://github.com/vsoch/pokemon.git,5.96,78%,3,0.012674271229404309,
+7,pokemonlib,https://github.com/arthuro555/pokemonlib.git,5.17,0%,0,0.20810810810810812,
+8,palettetown,https://github.com/rowland-208/palettetown.git,0.00,6%,0,7.0,
+10,hikari,https://github.com/hikari-py/hikari.git,0.00,38%,0,,

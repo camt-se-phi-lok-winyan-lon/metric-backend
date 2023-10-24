@@ -15,7 +15,7 @@ public class Library {
 
     String name;
     String url;
-    Double lint_score;
+    Double lintScore;
     String testPercentage;
     Integer documentScore;
     Double activeness;

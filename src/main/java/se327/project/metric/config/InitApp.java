@@ -44,10 +44,10 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .id(Long.parseLong(row[0]))
                         .name(row[1])
                         .url(row[2])
-                        .lint_score(Double.parseDouble(row[3]))
+                        .lintScore(Double.parseDouble(row[3]))
                         .testPercentage(row[4])
                         .documentScore(Integer.parseInt(row[5]))
-                        .activeness(Double.parseDouble(row[6]))
+                        .activeness(row[6].isEmpty()? 0 : Double.parseDouble(row[6]))
                         .build();
                 libraryRepository.save(lib);
             });
