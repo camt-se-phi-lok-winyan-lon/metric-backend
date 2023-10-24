@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 import se327.project.metric.entity.Library;
 import se327.project.metric.repository.LibraryRepository;
 
-import java.io.FileNotFoundException;
 import java.io.Reader;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;

@@ -1,20 +1,15 @@
 package se327.project.metric.controller;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,9 +25,14 @@ import se327.project.metric.repository.LibraryRepository;
 @RequiredArgsConstructor
 public class LibraryController {
     final LibraryRepository libRepository;
+
+    @GetMapping("/library")
+    ResponseEntity<?> getLibrary(){
+        return ResponseEntity.ok(libRepository.findAll());
+    }
+
     @PostMapping("/csv")
-    public ResponseEntity<?> addCSV(@RequestParam(value = "csv") MultipartFile file)
-            throws IOException, ServletException {
+    public ResponseEntity<?> addCSV(@RequestParam(value = "csv") MultipartFile file) throws IOException, ServletException {
         List<Library> newLib = new ArrayList<Library>();
         final String fileName = file.getOriginalFilename();
         if (fileName != null && !fileName.isEmpty() && fileName.contains(".")) {
