@@ -21,7 +21,7 @@ jobs:
         run: |
           mvn clean install -DskipTests -B
           mkdir -p target/dependency && (cd target/dependency; unzip ../*.jar)
-        working-directory: ./kaew-wan-backend
+        working-directory: .
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
