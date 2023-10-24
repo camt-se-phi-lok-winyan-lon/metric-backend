@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,17 +20,26 @@ import com.opencsv.CSVReader;
 import jakarta.servlet.ServletException;
 import lombok.RequiredArgsConstructor;
 import se327.project.metric.entity.Library;
+import se327.project.metric.entity.LibraryRequest;
 import se327.project.metric.repository.LibraryRepository;
+import se327.project.metric.service.LibraryService;
 
 @Controller
 @RequiredArgsConstructor
 public class LibraryController {
     final LibraryRepository libRepository;
+    final LibraryService libraryService;
 
     @GetMapping("/library")
     ResponseEntity<?> getLibrary(){
         return ResponseEntity.ok(libRepository.findAll());
     }
+
+    @PostMapping("/ranking")
+    ResponseEntity<?> getRanking(@RequestBody LibraryRequest libraryRequest) {
+        return ResponseEntity.ok(libraryService.getRanking(libraryRequest));
+    }
+
 
     @PostMapping("/csv")
     public ResponseEntity<?> addCSV(@RequestParam(value = "csv") MultipartFile file) throws IOException, ServletException {
